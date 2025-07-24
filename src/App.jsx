@@ -1,11 +1,27 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import IntroAnimation from './components/IntroAnimation';
+import Home from './pages/Home';
 
-const App = () => {
+function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntro(false), 30000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div>
-      
-    </div>
-  )
+    <Router>
+      {showIntro ? (
+        <IntroAnimation onComplete={() => setShowIntro(false)} />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      )}
+    </Router>
+  );
 }
 
-export default App
+export default App;
