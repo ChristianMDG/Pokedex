@@ -7,7 +7,7 @@ function App() {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 30000);
+    const timer = setTimeout(() => setShowIntro(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
