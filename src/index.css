@@ -1,1 +1,88 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root{
+    /* couler de fond*/
+    --color-main:#F5F7FA;
+    --color-header : #E5E7EB;
+    --color-border:#E0E0E0;
+
+  /* Couleurs pour le texte */
+  --text-title-main: #111827;       
+  --text-subtitle: #374151;         
+  --text-secondary: #6B7280;        
+  --text-pokemon-id: #9CA3AF;  
+
+     /* Grass */
+  --type-grass: #8BBE8A;
+
+  /* Poison */
+  --type-poison: #A552CC;
+
+  /* Fire */
+  --type-fire: #FFA756;
+
+  /* Water */
+  --type-water: #58ABF6;
+
+  /* Bug */
+  --type-bug: #8BD674;
+
+  /* Flying */
+  --type-flying: #748FC9;
+
+  /* Ice */
+  --type-ice: #91D8DF;
+
+  /* Psychic */
+  --type-psychic: #FF6568;
+
+  /* Electric */
+  --type-electric: #F2CB55;
+
+  /* Ground */
+  --type-ground: #F78551;
+
+  /* Rock */
+  --type-rock: #D4C294;
+
+  /* Normal */
+  --type-normal: #B5B9C4;
+
+  /* Dark */
+  --type-dark: #6F6E78;
+
+  /* Fairy */
+  --type-fairy: #EBA8C3;
+
+  /* Dragon */
+  --type-dragon: #7383B9;
+
+  /* Steel */
+  --type-steel: #417D9A;
+
+  /* Ghost */
+  --type-ghost: #8571BE;
+
+  /* Fighting */
+  --type-fighting: #EB4971;
+}
+.title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #333;
+}
+
+.titre {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #333;
+}
+
+.texte {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: #666;
+}
