@@ -7,7 +7,7 @@ function App() {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 3000);
+    const timer = setTimeout(() => setShowIntro(false), 300000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -17,8 +17,9 @@ function App() {
         <IntroAnimation onComplete={() => setShowIntro(false)} />
       ) : (
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Loading/>} />
         </Routes>
+
       )}
     </Router>
   );
