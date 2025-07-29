@@ -3,26 +3,25 @@ import { Animation } from "../services/redirect";
 const IntroAnimation = () => {
   return (
     <div className="w-screen h-screen flex flex-row items-center justify-center z-50 ">
-      <div className="w-[50%] h-full flex  flex-col justify-center items-center bg-white px-5">
-        <div className="w-full h-[15%]  flex justify-end relative ">
-          <img src="/src/assets/images/Pokemon - 1.png" alt="" className="absolute top-7 right-7 w-50 anime" />
+      <div className="w-[50%] h-full flex  flex-col items-center justify-center  p-5">
+        <div className="w-full h-[15%]  flex justify-end  pr-7">
+          <img src="/src/assets/images/Pokemon - 1.png" alt="" className="w-50 anime" />
         </div>
-
-        <div className="w-[70%] h-[60%] flex flex-col items-center justify-center  ">
-          <div className="h-[40%] w-full ">
+        <div className="w-[70%] h-[60%] flex flex-col items-start justify-start  ">
+          <div className="h-[20%] w-full  flex justify-center items-end ">
             <img
               src="/src/assets/images/Welcome-to-Pok-dex-3-4-2025 1.png "
               alt=""
             className="anime" />
           </div>
-          <div className="h-[20%] w-full flex justify-center items-center">
+          <div className="h-[60%] w-full flex justify-center items-center">
             <img
               src="/src/assets/images/pokeball 1.png"
               alt="Pokeball"
               className="pokeball"
             />
           </div>
-          <div className="h-[40%] w-full flex justify-center items-end">
+          <div className="h-[20%] w-full  flex justify-center items-start ">
             <img
               src="/src/assets/images/Encyclopedia-of-Pok-mon-3-4-2025 1.png"
               alt=""
