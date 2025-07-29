@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 :root {
   /* couler de fond*/
-  --color-main: #f5f7fa;
+  --color-main: #F5F7FA;
   --color-header: #e5e7eb;
   --color-border: #e0e0e0;
 
@@ -87,8 +87,8 @@
   color: #666;
 }
 
-.pokeball {
-  animation: float 1.5s ease-in-out infinite;
+.bird {
+  animation: float 3s ease-in-out infinite;
   transform-style: preserve-3d;
 }
 
@@ -97,14 +97,16 @@
   0%,
   100% {
     transform: translateY(0) rotateY(0);
+   
   }
   50% {
     transform: translateY(-20px) rotateY(10deg);
+    
   }
 }
 
 .anime{
-    animation: scrollAnimation ease 1.5s;
+    animation: scrollAnimation ease 3s;
 }
 
 @keyframes scrollAnimation {
@@ -116,4 +118,18 @@
         transform: scale(1);
         opacity: 1;
     }
+}
+
+.ash{
+     animation: animate 3s ease-in-out infinite;
+}
+@keyframes animate {
+  0%,100% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
