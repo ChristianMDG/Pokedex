@@ -42,7 +42,7 @@ const IntroAnimation = () => {
         <div className="w-[75%] h-[70%] flex flex-col gap-2 ">
           <div className="w-full h-[80%] p-5 py-7 flex justify-center items-center">
             {/* <div className="w-70 h-70 rounded-full bg-yellow-50 flex justify-center items-center"> */}
-               <img src="/src/assets/images/Pok-dex-3-4-2025 1.svg" alt="" /> 
+               <img src="/src/assets/images/Pok-dex-3-4-2025 1.svg" alt="pokedex" className="ash" /> 
             {/* </div> */}
          
           </div>
