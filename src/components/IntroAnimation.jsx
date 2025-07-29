@@ -2,26 +2,51 @@ import React from "react";
 import { Animation } from "../services/redirect";
 const IntroAnimation = () => {
   return (
-    <div
-      className="w-screen h-screen flex flex-row items-center justify-center z-50"
-      style={{ backgroundImage: "" }}
-    >
-      <div className="w-[60%] h-full flex justify-center items-center bg-amber-300">
-        <div className="w-[70%] h-[70%] flex flex-col items-center justify-center bg-amber-100  ">
-          <div className="h-[40%] w-full bg-blue-400">
-            <img src="/src/assets/images/Welcome-to-Pok-dex-3-4-2025 1.png" alt="" />
+    <div className="w-screen h-screen flex flex-row items-center justify-center z-50 ">
+      <div className="w-[50%] h-full flex  flex-col justify-center items-center bg-white px-5">
+        <div className="w-full h-[15%]  flex justify-end relative ">
+          <img src="/src/assets/images/Pokemon - 1.png" alt="" className="absolute top-7 right-7 w-50 anime" />
+        </div>
+
+        <div className="w-[70%] h-[60%] flex flex-col items-center justify-center  ">
+          <div className="h-[40%] w-full ">
+            <img
+              src="/src/assets/images/Welcome-to-Pok-dex-3-4-2025 1.png "
+              alt=""
+            className="anime" />
           </div>
-            <div className="text-white text-6xl font-bold animate-fade-in-rotate titre h-[20%] w-full flex justify-center items-center">
-            <img src="/src/assets/images/pokeball 1.png" alt="Pokeball" className='pokeball' />
-          </div> 
-          <div className="h-[40%] w-full flex justify-center items-center bg-blue-700">
-            <img src="/src/assets/images/Encyclopedia-of-Pok-mon-3-4-2025 1.png" alt="" />
+          <div className="h-[20%] w-full flex justify-center items-center">
+            <img
+              src="/src/assets/images/pokeball 1.png"
+              alt="Pokeball"
+              className="pokeball"
+            />
+          </div>
+          <div className="h-[40%] w-full flex justify-center items-end">
+            <img
+              src="/src/assets/images/Encyclopedia-of-Pok-mon-3-4-2025 1.png"
+              alt=""
+            className="anime"/>
           </div>
         </div>
       </div>
 
-      <div className="w-1/2 h-full bg-blue-400">
-      hello
+      <div className="w-[50%] h-full bg-blue-400 flex justify-center items-center">
+        <div className="w-[75%] h-[70%] bg-emerald-300">
+          <div className="w-full h-[80%]"></div>
+          <div className="w-full h-[20%] bg-amber-400 flex flex-col justify-center items-center ">
+            <button
+              id="start-btn"
+              class="px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full font-bold tracking-wider transform hover:scale-105 transition-all duration-300 shadow-lg shadow-red-900/50"
+            >
+              DÉMARRER
+            </button>
+
+            <div class="mt-8 text-xs text-gray-400 animate-pulse">
+              Appuyez sur Démarrer pour commencer votre aventure Pokémon!
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
