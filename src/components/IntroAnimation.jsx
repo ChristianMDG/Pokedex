@@ -1,5 +1,4 @@
 import React from "react";
-import { Animation } from "../services/redirect";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
