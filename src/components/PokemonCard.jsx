@@ -7,8 +7,9 @@ const PokemonCard = () => {
           <img src="/src/assets/images/Pokemon - 3.png" alt="" className='w-40 bird' />
         </div>
          
-         <div className='w-full h-[30%] bg-amber-800 flex justify-center items-center'>
+         <div className='w-full h-[30%] bg-amber-800 flex flex-col justify-center items-center'>
            <p className='text-[1.1rem]'>001</p>
+           <h1>Nom</h1>
            <div >
 
            </div>
