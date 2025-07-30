@@ -77,7 +77,11 @@ const IntroAnimation = () => {
         `}
               disabled={isLoading}
             >
-              {isLoading ? "CHARGEMENT..." : "Démarrer"}
+              {isLoading ? (
+                <div className="pokeball-loader"></div>
+              ) : (
+                "Go Start!"
+              )}
             </button>
 
             <div class="mt-8 text-xm text-black animate-pulse">
