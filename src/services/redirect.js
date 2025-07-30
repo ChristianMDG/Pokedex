@@ -4,9 +4,9 @@ export function Animation() {
         startBtn.innerHTML = 'CHARGEMENT...';
         startBtn.classList.remove('animate-pulse');
         startBtn.classList.add('bg-yellow-500', 'text-black');
-
+        
         setTimeout(() => {
-            window.location.href = "pokedex.html"; // Change this to your actual Pokédex page
+            window.location.href = "pokedex.html"; 
         }, 2000);
     });
 }
