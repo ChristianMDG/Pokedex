@@ -72,7 +72,7 @@ const IntroAnimation = () => {
           ${
             isLoading
               ? "bg-yellow-400 text-black"
-              : "bg-yellow-300 hover:bg-yellow-100 animate-pulse shadow-red-900/50"
+              : "bg-yellow-300 hover:bg-yellow-100 shadow-red-900/50"
           }
         `}
               disabled={isLoading}
@@ -88,7 +88,7 @@ const IntroAnimation = () => {
               )}
             </button>
 
-            <div class="mt-8 text-xm text-black animate-pulse">
+            <div class="mt-8 text-xm text-black animate-pulse md:block hidden">
               Press Start key to begin your Pokemon Adventure !
             </div>
           </div>

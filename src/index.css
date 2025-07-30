@@ -121,7 +121,7 @@
 }
 
 .ash{
-     animation: animate 3s ease-in-out infinite;
+     animation: animate 5s ease-in-out infinite;
 }
 @keyframes animate {
   0%,100% {
