@@ -16,16 +16,16 @@ const IntroAnimation = () => {
     }, 2000);
   };
   return (
-    <div className="w-screen h-screen flex flex-row items-center justify-center z-50 ">
-      <div className="w-[50%] h-full flex  flex-col items-center justify-center bg-[var(--color-main)] p-5">
-        <div className="w-full h-[15%]  flex justify-end  pr-7 anime">
+    <div className="w-screen h-screen flex md:flex-row flex-col items-center justify-center z-50  mt-4 md:mt-0  ">
+      <div className="md:w-[50%] w-full md:h-full h-screen flex  flex-col items-center justify-center md:p-5">
+        <div className="w-full h-[15%]  flex justify-end  md:pr-7 anime">
           <img
             src="/src/assets/images/Pokemon - 1.png"
             alt=""
             className="w-50 bird"
           />
         </div>
-        <div className="w-[70%] h-[60%] flex flex-col items-start justify-start  ">
+        <div className="md:w-[70%] w-full md:h-[60%] flex flex-col items-start justify-start  ">
           <div className="h-[20%] w-full  flex justify-center items-end anime ">
             <img
               src="/src/assets/images/Welcome-to-Pok-dex-3-4-2025 1.png "
@@ -52,7 +52,7 @@ const IntroAnimation = () => {
         </div>
       </div>
 
-      <div className="w-[50%] h-full bg-yellow-200 flex justify-center items-center">
+      <div className="md:w-[50%] w-full h-full bg-yellow-200 flex justify-center items-center">
         <div className="w-[75%] h-[70%] flex flex-col gap-2 ">
           <div className="w-full h-[80%] p-5 py-7 flex justify-center items-center">
             {/* <div className="w-70 h-70 rounded-full bg-yellow-50 flex justify-center items-center"> */}
