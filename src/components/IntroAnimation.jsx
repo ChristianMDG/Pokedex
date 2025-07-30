@@ -1,21 +1,65 @@
-
-import React from 'react';
-
+import React from "react";
+import { Animation } from "../services/redirect";
 const IntroAnimation = () => {
   return (
-    <div className="fixed inset-0 bg-gray-900 flex items-center justify-center z-50 ">
-      <div className='w-screen h-90 bg-red flex justify-center items-center'>
-         <div className='w-80 h-80 bg-amber-300 flex items-center justify-center rounded-full'>
-        <div className="text-white text-6xl font-bold animate-fade-in-rotate titre">
-        Pokédex
+    <div className="w-screen h-screen flex flex-row items-center justify-center z-50 ">
+      <div className="w-[50%] h-full flex  flex-col items-center justify-center bg-[var(--color-main)] p-5">
+        <div className="w-full h-[15%]  flex justify-end  pr-7 anime">
+          <img
+            src="/src/assets/images/Pokemon - 1.png"
+            alt=""
+            className="w-50 bird"
+          />
+        </div>
+        <div className="w-[70%] h-[60%] flex flex-col items-start justify-start  ">
+          <div className="h-[20%] w-full  flex justify-center items-end anime ">
+            <img
+              src="/src/assets/images/Welcome-to-Pok-dex-3-4-2025 1.png "
+              alt=""
+              className=""
+            />
+          </div>
+          <div className="h-[60%] w-full flex justify-center items-center">
+            <div className="w-70 h-70 bg-yellow-200 rounded-full flex justify-center items-center anime">
+              <img
+                src="/src/assets/images/ash.png"
+                alt="ash"
+                className="ash w-40"
+              />
+            </div>
+          </div>
+          <div className="h-[20%] w-full  flex justify-center items- anime ">
+            <img
+              src="/src/assets/images/Encyclopedia-of-Pok-mon-3-4-2025 1.png"
+              alt=""
+              className=""
+            />
+          </div>
+        </div>
       </div>
+
+      <div className="w-[50%] h-full bg-yellow-200 flex justify-center items-center">
+        <div className="w-[75%] h-[70%] flex flex-col gap-2 ">
+          <div className="w-full h-[80%] p-5 py-7 flex justify-center items-center">
+            {/* <div className="w-70 h-70 rounded-full bg-yellow-50 flex justify-center items-center"> */}
+               <img src="/src/assets/images/Pok-dex-3-4-2025 1.svg" alt="pokedex" className="ash" /> 
+            {/* </div> */}
+         
+          </div>
+          <div className="w-full h-[20%] flex flex-col justify-center items-center ">
+            <button
+              id="start-btn"
+              class="px-8 py-3 bg-yellow-300 hover:bg-yellow-100 rounded-full font-bold tracking-wider transform hover:scale-105 transition-all duration-300 shadow-lg shadow-red-900/50"
+            >
+             Go Start
+            </button>
+
+            <div class="mt-8 text-xm text-black animate-pulse">
+              Press Start key to begin your Pokemon Adventure !
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-     
-      
-      <div
-        className="absolute inset-0 bg-pokedex-gray animate-fade-out"
-      />
     </div>
   );
 };
