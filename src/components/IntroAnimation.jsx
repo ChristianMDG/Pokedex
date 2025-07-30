@@ -68,7 +68,7 @@ const IntroAnimation = () => {
               id="start-btn"
               ref={startBtnRef}
               onClick={handleStart}
-              className={`px-8 py-3 rounded-full font-bold tracking-wider transform transition-all duration-300 shadow-lg
+              className={`px-15 py-3 rounded-full font-bold text-style tracking-wider transform transition-all duration-300 shadow-lg
           ${
             isLoading
               ? "bg-yellow-500 text-black"
@@ -77,7 +77,11 @@ const IntroAnimation = () => {
         `}
               disabled={isLoading}
             >
-              {isLoading ? "CHARGEMENT..." : "Démarrer"}
+              {isLoading ? (
+               <img src="/src/assets/images/pokeball 1.svg" alt="" className="pokeball-loader mx-6"/>
+              ) : (
+                "Go Start!"
+              )}
             </button>
 
             <div class="mt-8 text-xm text-black animate-pulse">
