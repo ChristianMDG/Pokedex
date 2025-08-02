@@ -1,20 +1,45 @@
-import React from 'react'
-import PokemonCard from '../components/PokemonCard'
+import { useState, useEffect } from 'react';
+import SearchBar from '../components/SearchBar';
+import PokemonCard from '../components/PokemonCard';
+import PokemonDetails from '../components/PokemonDetails';
+import { getPokemonList, getPokemonDetails } from '../services/pokemonService';
 
-PokemonCard
 const Home = () => {
- 
-  return (
-    <div className='w-screen h-screen bg-yellow-200 flex flex-col'> 
-      <nav className='w-full h-[10%] bg-[var(--color-header)] flex justify-center items-center text-3xl'>
-      Searchbar.jsx
-      </nav>
-     <main className='w-full h-[90%] flex md:flex-row  flex-col'>
-      <div className='w-[70%] h-full  grid md:grid-cols-4 grid-cols-2 p-3'><PokemonCard/></div>
-      <div className='md:w-[30%] h-full w-full bg-cyan-500 justify-center items-center text-3xl hidden md:flex'>PokemonDetails.jsx</div>
-     </main>
-    </div>
-  )
-}
+  const [pokemons, setPokemons] = useState([]);
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
 
-export default Home
+  useEffect(() => {
+    getPokemonList().then(data => {
+      setPokemons(data);
+      setFilteredPokemons(data);
+    });
+  }, []);
+
+  const handleSearch = (searchTerm) => {
+    const filtered = pokemons.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPokemons(filtered);
+  };
+
+  const handlePokemonClick = async (url) => {
+    const details = await getPokemonDetails(url);
+    setSelectedPokemon(details);
+  };
+
+  return (
+    <div className="bg-pokedex-gray min-h-screen p-4">
+      <h1 className="text-4xl font-bold text-white text-center mb-4">Pokédex</h1>
+      <SearchBar onSearch={handleSearch} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {filteredPokemons.map((pokemon, index) => (
+          <PokemonCard key={index} pokemon={pokemon} onClick={() => handlePokemonClick(pokemon.url)} />
+        ))}
+      </div>
+      {selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}
+    </div>
+  );
+};
+
+export default Home;
