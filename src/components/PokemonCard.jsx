@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PokemonCard = ({ pokemon, onClick }) => {
-  const id = pokemon.url.split('/').filter(Boolean).pop(); // Récupère l'ID à la fin de l'URL
+  const id = pokemon.url.split('/').filter(Boolean).pop(); 
 
   return (
     <div
