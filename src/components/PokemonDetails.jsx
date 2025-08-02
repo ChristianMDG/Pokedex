@@ -36,17 +36,17 @@ const PokemonDetails = ({ pokemon }) => {
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-xl text-black max-w-lg mx-auto">
-      {/* Titre */}
+     
       <h2 className="text-2xl font-bold capitalize text-center mb-2">{pokemon.name}</h2>
 
-      {/* Image */}
+    
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
         alt={pokemon.name}
         className="mx-auto w-40 h-40 object-contain mb-4"
       />
 
-      {/* Types */}
+      
       <div className="flex justify-center gap-2 mb-4">
         {pokemon.types.map(t => (
           <span
@@ -58,7 +58,7 @@ const PokemonDetails = ({ pokemon }) => {
         ))}
       </div>
 
-      {/* Weaknesses */}
+    
       <div className="mb-4">
         <p className="font-bold mb-1">Weaknesses:</p>
         <div className="flex flex-wrap gap-2">
@@ -73,7 +73,7 @@ const PokemonDetails = ({ pokemon }) => {
         </div>
       </div>
 
-      {/* Infos */}
+    
       <div className="grid grid-cols-2 gap-2 text-sm mb-4">
         <p><strong>Height:</strong> {pokemon.height / 10} m</p>
         <p><strong>Weight:</strong> {pokemon.weight / 10} kg</p>
@@ -82,7 +82,7 @@ const PokemonDetails = ({ pokemon }) => {
         <p><strong>Category:</strong> {pokemon.species?.genera?.find(gen => gen.language.name === 'en')?.genus || '—'}</p>
       </div>
 
-      {/* Evolution */}
+     
       <div className="mb-4">
         <h3 className="font-bold mb-2">Evolution</h3>
         <div className="flex items-center justify-center gap-2">
