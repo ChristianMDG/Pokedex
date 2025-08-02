@@ -8,7 +8,8 @@ const PokemonCard = ({ pokemon }) => {
       
     >
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png
+`}
         alt={pokemon.name}
         className="mx-auto"
       />
@@ -19,3 +20,7 @@ const PokemonCard = ({ pokemon }) => {
 }
 
 export default PokemonCard
+
+/*https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png*/ 
+/*https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg */
+/*https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png */
