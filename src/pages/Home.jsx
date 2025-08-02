@@ -16,12 +16,30 @@ const Home = () => {
     });
   }, []);
 
-  const handleSearch = (searchTerm) => {
-    const filtered = pokemons.filter(pokemon =>
-      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+ const handleSearch = ({ search, type }) => {
+  let filtered = pokemons;
+
+  if (search) {
+    filtered = filtered.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(search.toLowerCase())
     );
+  }
+
+  if (type) {
+    fetch(`https://pokeapi.co/api/v2/type/${type}`)
+      .then(res => res.json())
+      .then(data => {
+        const filteredByType = data.pokemon.map(p => p.pokemon.name);
+        const finalFiltered = filtered.filter(p =>
+          filteredByType.includes(p.name)
+        );
+        setFilteredPokemons(finalFiltered);
+      });
+  } else {
     setFilteredPokemons(filtered);
-  };
+  }
+};
+
 
   const handlePokemonClick = async (url) => {
     const details = await getPokemonDetails(url);
