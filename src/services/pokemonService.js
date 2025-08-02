@@ -17,11 +17,13 @@ export const getPokemonDetails = async (url) => {
     const response = await axios.get(url);
     const speciesResponse = await axios.get(response.data.species.url);
     const evolutionResponse = await axios.get(speciesResponse.data.evolution_chain.url);
-   return {
-  ...response.data,
-  description: speciesResponse.data.flavor_text_entries.find(entry => entry.language.name === 'fr')?.flavor_text || 'No description available',
-  evolution: evolutionResponse.data.chain,
-};
+
+    return {
+      ...response.data,
+      species: speciesResponse.data,
+      description: speciesResponse.data.flavor_text_entries.find(entry => entry.language.name === 'fr')?.flavor_text || 'Pas de description',
+      evolution: evolutionResponse.data.chain,
+    };
   } catch (error) {
     console.error('Error fetching Pokémon details:', error);
     throw error;

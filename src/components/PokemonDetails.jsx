@@ -1,5 +1,22 @@
 import React from 'react';
 
+const TYPE_COLORS = {
+  grass: 'bg-green-300 text-green-800',
+  fire: 'bg-orange-300 text-orange-800',
+  water: 'bg-blue-300 text-blue-800',
+  poison: 'bg-purple-300 text-purple-800',
+  bug: 'bg-lime-300 text-lime-800',
+  flying: 'bg-sky-200 text-sky-800',
+  psychic: 'bg-pink-300 text-pink-800',
+  ice: 'bg-cyan-200 text-cyan-800',
+  rock: 'bg-yellow-400 text-yellow-900',
+  ground: 'bg-yellow-600 text-white',
+  electric: 'bg-yellow-300 text-yellow-800',
+  normal: 'bg-gray-300 text-gray-800',
+  fighting: 'bg-red-400 text-white',
+  // Ajoute d'autres types si besoin
+};
+
 const PokemonDetails = ({ pokemon }) => {
   const getWeaknesses = (types) => {
     const typeChart = {
@@ -7,7 +24,6 @@ const PokemonDetails = ({ pokemon }) => {
       fire: ['water', 'rock', 'ground'],
       water: ['electric', 'grass'],
       grass: ['fire', 'ice', 'poison', 'flying', 'bug'],
-      // Ajoute d'autres types ici si nécessaire
     };
     const weaknesses = new Set();
     types.forEach(type =>
@@ -19,36 +35,65 @@ const PokemonDetails = ({ pokemon }) => {
   const getIdFromUrl = (url) => url.split('/').filter(Boolean).pop();
 
   return (
-    <div className="bg-pokedex-red p-4 rounded-lg mt-4 text-white">
-      <h2 className="text-xl font-bold capitalize text-center">{pokemon.name}</h2>
-      
+    <div className="bg-white p-6 rounded-2xl shadow-xl text-black max-w-lg mx-auto">
+      {/* Titre */}
+      <h2 className="text-2xl font-bold capitalize text-center mb-2">{pokemon.name}</h2>
+
+      {/* Image */}
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
         alt={pokemon.name}
-        className="mx-auto mt-2 w-40 h-40 object-contain"
+        className="mx-auto w-40 h-40 object-contain mb-4"
       />
 
-      <div className="mt-4 space-y-1">
-        <p><span className="font-bold">Height:</span> {pokemon.height / 10} m</p>
-        <p><span className="font-bold">Weight:</span> {pokemon.weight / 10} kg</p>
-        <p><span className="font-bold">Health:</span> {pokemon.stats[0].base_stat} HP</p>
-        <p><span className="font-bold">Category:</span> {pokemon.types.map(t => t.type.name).join(', ')}</p>
-        <p><span className="font-bold">Abilities:</span> {pokemon.abilities.map(a => a.ability.name).join(', ')}</p>
-        <p><span className="font-bold">Weakness:</span> {getWeaknesses(pokemon.types).join(', ')}</p>
+      {/* Types */}
+      <div className="flex justify-center gap-2 mb-4">
+        {pokemon.types.map(t => (
+          <span
+            key={t.type.name}
+            className={`text-sm font-semibold px-2 py-1 rounded-full ${TYPE_COLORS[t.type.name] || 'bg-gray-200 text-gray-800'}`}
+          >
+            {t.type.name}
+          </span>
+        ))}
       </div>
 
-      <div className="mt-4">
-        <h3 className="font-bold">Evolution:</h3>
-        <div className="flex items-center space-x-2 mt-2">
+      {/* Weaknesses */}
+      <div className="mb-4">
+        <p className="font-bold mb-1">Weaknesses:</p>
+        <div className="flex flex-wrap gap-2">
+          {getWeaknesses(pokemon.types).map(w => (
+            <span
+              key={w}
+              className={`text-sm font-medium px-2 py-1 rounded-full ${TYPE_COLORS[w] || 'bg-gray-200 text-gray-800'}`}
+            >
+              {w}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Infos */}
+      <div className="grid grid-cols-2 gap-2 text-sm mb-4">
+        <p><strong>Height:</strong> {pokemon.height / 10} m</p>
+        <p><strong>Weight:</strong> {pokemon.weight / 10} kg</p>
+        <p><strong>Health:</strong> {pokemon.stats[0].base_stat} HP</p>
+        <p><strong>Abilities:</strong> {pokemon.abilities.map(a => a.ability.name).join(', ')}</p>
+        <p><strong>Category:</strong> {pokemon.species?.genera?.find(gen => gen.language.name === 'en')?.genus || '—'}</p>
+      </div>
+
+      {/* Evolution */}
+      <div className="mb-4">
+        <h3 className="font-bold mb-2">Evolution</h3>
+        <div className="flex items-center justify-center gap-2">
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
             alt={pokemon.name}
             className="w-16 h-16"
           />
-
           {pokemon.evolution?.evolves_to?.length > 0 && (
             <>
-              <p>→</p>
+              <span>→</span>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${getIdFromUrl(pokemon.evolution.evolves_to[0].species.url)}.png`}
                 alt={pokemon.evolution.evolves_to[0].species.name}
@@ -56,7 +101,7 @@ const PokemonDetails = ({ pokemon }) => {
               />
               {pokemon.evolution.evolves_to[0].evolves_to.length > 0 && (
                 <>
-                  <p>→</p>
+                  <span>→</span>
                   <img
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${getIdFromUrl(pokemon.evolution.evolves_to[0].evolves_to[0].species.url)}.png`}
                     alt={pokemon.evolution.evolves_to[0].evolves_to[0].species.name}
@@ -69,13 +114,15 @@ const PokemonDetails = ({ pokemon }) => {
         </div>
       </div>
 
-      <div className="mt-4 italic">
+      {/* Description */}
+      <div className="mb-4 italic text-sm">
         {pokemon.description && <p>{pokemon.description.replace('\f', ' ')}</p>}
       </div>
 
+      {/* Navigation */}
       <div className="flex justify-between mt-6">
-        <button className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400">{'< Précédent'}</button>
-        <button className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400">{'Suivant >'}</button>
+        <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">{'< 1025'}</button>
+        <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">{'0002 >'}</button>
       </div>
     </div>
   );
