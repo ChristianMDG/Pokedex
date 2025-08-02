@@ -14,7 +14,7 @@ const TYPE_COLORS = {
   electric: 'bg-yellow-300 text-yellow-800',
   normal: 'bg-gray-300 text-gray-800',
   fighting: 'bg-red-400 text-white',
-  // Ajoute d'autres types si besoin
+
 };
 
 const PokemonDetails = ({ pokemon }) => {
@@ -114,12 +114,12 @@ const PokemonDetails = ({ pokemon }) => {
         </div>
       </div>
 
-      {/* Description */}
+     
       <div className="mb-4 italic text-sm">
         {pokemon.description && <p>{pokemon.description.replace('\f', ' ')}</p>}
       </div>
 
-      {/* Navigation */}
+     
       <div className="flex justify-between mt-6">
         <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">{'< 1025'}</button>
         <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">{'0002 >'}</button>
