@@ -32,12 +32,16 @@ const Home = () => {
     <div className="bg-pokedex-gray min-h-screen p-4">
       <h1 className="text-4xl font-bold text-white text-center mb-4">Pokédex</h1>
       <SearchBar onSearch={handleSearch} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <main className='flex w-full h-full'>
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[70%]">
         {filteredPokemons.map((pokemon, index) => (
           <PokemonCard key={index} pokemon={pokemon} onClick={() => handlePokemonClick(pokemon.url)} />
         ))}
       </div>
-      {selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}
+      <div>{selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}</div>
+      </main>
+     
+     
     </div>
   );
 };
