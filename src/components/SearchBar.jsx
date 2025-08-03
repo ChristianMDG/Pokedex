@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaTimes } from 'react-icons/fa'; 
+import { motion } from 'framer-motion'; 
 
 const SearchBar = ({ onSearch }) => {
   const [search, setSearch] = useState('');
@@ -8,12 +9,16 @@ const SearchBar = ({ onSearch }) => {
 
   useEffect(() => {
     const fetchTypes = async () => {
-      const res = await fetch('https://pokeapi.co/api/v2/type');
-      const data = await res.json();
-      const filteredTypes = data.results
-        .map(t => t.name)
-        .filter(t => t !== 'unknown' && t !== 'shadow');
-      setTypes(filteredTypes);
+      try {
+        const res = await fetch('https://pokeapi.co/api/v2/type');
+        const data = await res.json();
+        const filteredTypes = data.results
+          .map(t => t.name)
+          .filter(t => t !== 'unknown' && t !== 'shadow');
+        setTypes(filteredTypes);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des types de Pokémon:", error);
+      }
     };
     fetchTypes();
   }, []);
@@ -24,6 +29,11 @@ const SearchBar = ({ onSearch }) => {
     onSearch({ search: newSearch, type: typeFilter });
   };
 
+  const handleClearSearch = () => {
+    setSearch('');
+    onSearch({ search: '', type: typeFilter });
+  };
+
   const handleTypeChange = (e) => {
     const selectedType = e.target.value;
     setTypeFilter(selectedType);
@@ -32,11 +42,16 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="flex justify-center mb-6">
-      <div className="relative flex items-center w-full max-w-2xl bg-white rounded-full shadow-lg p-1">
-        {/* Icône de recherche */}
-        <FaSearch className="text-gray-400 mx-4" />
+      <motion.div
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative flex items-center w-full max-w-2xl bg-white rounded-full shadow-lg p-1
+                   hover:shadow-xl transition-shadow duration-300 ease-in-out
+                   focus-within:ring-2 focus-within:ring-blue-400 focus-within:ring-opacity-75" // Effet au focus
+      >
+        <FaSearch className="text-gray-400 mx-4 text-lg" />
 
-        {/* Champ de recherche */}
         <input
           type="text"
           placeholder="Rechercher par nom ou numéro..."
@@ -45,15 +60,28 @@ const SearchBar = ({ onSearch }) => {
           onChange={handleSearch}
         />
 
-        {/* Séparateur visuel */}
-        <div className="h-6 w-px bg-gray-300"></div>
+        {search && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            onClick={handleClearSearch}
+            className="text-gray-500 hover:text-gray-700 p-2 rounded-full transition-colors duration-200"
+            aria-label="Effacer la recherche"
+          >
+            <FaTimes className="text-sm" />
+          </motion.button>
+        )}
 
-        {/* Menu déroulant des types */}
-        <div className="relative ml-2">
+        <div className="h-8 w-px bg-gray-300 mx-2"></div>
+
+        <div className="relative">
           <select
             value={typeFilter}
             onChange={handleTypeChange}
-            className="p-2 pr-8 rounded-full text-black bg-white appearance-none focus:outline-none cursor-pointer"
+            className="p-2 pr-8 rounded-full text-black bg-white appearance-none focus:outline-none cursor-pointer
+                       hover:bg-gray-50 transition-colors duration-200" 
           >
             <option value="">Type</option>
             {types.map((type, index) => (
@@ -69,7 +97,7 @@ const SearchBar = ({ onSearch }) => {
             </svg>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
