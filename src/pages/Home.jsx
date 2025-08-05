@@ -48,9 +48,9 @@ const Home = () => {
 
   return (
     <div className="bg-pokedex-gray min-h-screen">
-      <nav className='flex flex-row w-full h-20 md:justify-between  items-center md:px-25 px-5 md:gap-3 gap-2 anime'>
+      <nav className='flex flex-row w-full h-20 md:justify-between items-center md:px-25 px-5 md:gap-3 gap-2 anime'>
          <div className="bg-amber-30">
-          <img  src="/src/assets/images/Pok-dex-3-4-2025 1.svg" className='w-50 ash' />
+          <img  src="/src/assets/images/Pok-dex-3-4-2025 1.svg" className='md:w-60 ash' />
          </div>
       <SearchBar onSearch={handleSearch} />
       </nav>
