@@ -1,25 +1,11 @@
 import React from "react";
-const TYPE_COLOR = {
-  grass: "bg-green-300 text-green-800",
-  fire: "bg-orange-300 text-orange-800",
-  water: "bg-blue-300 text-blue-800",
-  poison: "bg-purple-300 text-purple-800",
-  bug: "bg-lime-300 text-lime-800",
-  flying: "bg-sky-200 text-sky-800",
-  psychic: "bg-pink-300 text-pink-800",
-  ice: "bg-cyan-200 text-cyan-800",
-  rock: "bg-yellow-400 text-yellow-900",
-  ground: "bg-yellow-600 text-white",
-  electric: "bg-yellow-300 text-yellow-800",
-  normal: "bg-gray-300 text-gray-800",
-  fighting: "bg-red-400 text-white",
-};
+
 const PokemonCard = ({ pokemon, onClick }) => {
   const id = pokemon.url.split("/").filter(Boolean).pop();
 
   return (
     <div
-      className="h-90 perspective cursor-pointer"
+      className=" h-90 perspective cursor-pointer"
       onClick={() => onClick(id)}
     >
       <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
@@ -36,11 +22,11 @@ const PokemonCard = ({ pokemon, onClick }) => {
             alt={pokemon.name}
             className="w-48 h-48 z-10 anime"
           />
-          <div className="w-full h-25 bg-amber-200 mt-5 flex flex-col justify-center items-center">
+          <div className="w-full h-25  mt-5 flex flex-col justify-center items-center">
             <h3 className="text-lg font-bold capitalize text-black mt-1 z-10">
               {pokemon.name}
             </h3>
-            <div className="bg-amber-700 w-full h-[50%]">
+            <div className=" w-full h-[50%]">
               
             </div>
           </div>

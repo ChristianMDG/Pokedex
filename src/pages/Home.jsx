@@ -57,7 +57,7 @@ const navigate = useNavigate();
   const back = () => {
     setTimeout(() => {
       navigate("/");
-    }, 100);
+    }, 300);
   };
 
   return (
