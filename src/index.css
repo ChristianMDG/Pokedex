@@ -169,3 +169,20 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+
+.dark{
+ main{
+  background-color: #182032;
+ }
+ nav{
+   background-color: #374151;
+ }
+ .tertiary{
+  background-color: #e5e7eb;
+ }
+ .carte{
+  background-color: #374151;
+  border: none;
+ }
+}

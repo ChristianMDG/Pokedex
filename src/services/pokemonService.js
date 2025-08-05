@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
 
-export const getPokemonList = async (limit =500) => {
+export const getPokemonList = async (limit =44) => {
   try {
     const response = await axios.get(`${BASE_URL}/pokemon?limit=${limit}`);
     return response.data.results;

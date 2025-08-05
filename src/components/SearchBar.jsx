@@ -33,14 +33,14 @@ const SearchBar = ({ onSearch }) => {
       <input
         type="text"
         placeholder="Search Pokemon "
-        className="p-2 rounded text-black w-40 md:w-96 bg-amber-100 outline-none "
+        className="p-2 rounded text-black w-40 md:w-96 bg-amber-100 outline-none tertiary"
         value={search}
         onChange={handleSearch}
       />
       <select
         value={typeFilter}
         onChange={handleTypeChange}
-        className="p-2 rounded text-black hidden md:block md:w-48 bg-amber-100 "
+        className="p-2 rounded text-black hidden md:block md:w-48 bg-amber-100 outline-none tertiary "
       >
         <option value="">All</option>
         {types.map((type, index) => (
