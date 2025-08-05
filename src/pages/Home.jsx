@@ -47,11 +47,17 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-pokedex-gray min-h-screen p-4">
-      <h1 className="text-4xl font-bold text-white text-center mb-4">Pokédex</h1>
+    <div className="bg-pokedex-gray min-h-screen">
+      <nav className='flex w-full h-20 bg-fuchsia-400  '>
+         <div className="text-4xl font-bold text-black text-center mb-4">
+          <img  src="/src/assets/images/Pok-dex-3-4-2025 1.svg" className='w-50' />
+         </div>
       <SearchBar onSearch={handleSearch} />
-      <main className='flex w-full h-full'>
-         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[70%]">
+      <img  src="/src/assets/images/pokeball 1.svg" alt=""  className='w-10'/>
+      </nav>
+     
+      <main className='flex w-full h-full bg-blue-500'>
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 w-full">
         {filteredPokemons.map((pokemon, index) => (
           <PokemonCard key={index} pokemon={pokemon} onClick={() => handlePokemonClick(pokemon.url)} />
         ))}

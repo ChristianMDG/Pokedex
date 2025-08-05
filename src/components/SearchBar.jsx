@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-4">
+    <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-4 bg-amber-300">
       <input
         type="text"
         placeholder="Rechercher par nom ou numéro"
