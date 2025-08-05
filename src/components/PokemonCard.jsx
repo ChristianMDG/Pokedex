@@ -5,7 +5,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
 
   return (
     <div
-      className="bg-pokedex-red p-4 rounded-lg text-center cursor-pointer hover:bg-red-300 transition anime"
+      className="bg-pokedex-red p-4 rounded-lg text-center cursor-pointer hover:bg-yellow-100 transition anime"
       onClick={() => onClick(id)}
     >
       <img
