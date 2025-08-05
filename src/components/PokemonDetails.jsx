@@ -43,7 +43,7 @@ const PokemonDetails = ({ pokemon }) => {
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
         alt={pokemon.name}
-        className="mx-auto w-40 h-40 object-contain mb-4"
+        className="mx-auto w-40 h-40 object-contain mb-4 bird"
       />
 
       
@@ -117,12 +117,6 @@ const PokemonDetails = ({ pokemon }) => {
      
       <div className="mb-4 italic text-sm">
         {pokemon.description && <p>{pokemon.description.replace('\f', ' ')}</p>}
-      </div>
-
-     
-      <div className="flex justify-between mt-6">
-        <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">{'< 1025'}</button>
-        <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">{'0002 >'}</button>
       </div>
     </div>
   );

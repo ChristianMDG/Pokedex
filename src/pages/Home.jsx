@@ -48,21 +48,20 @@ const Home = () => {
 
   return (
     <div className="bg-pokedex-gray min-h-screen">
-      <nav className='flex w-full h-20 bg-fuchsia-400  '>
-         <div className="text-4xl font-bold text-black text-center mb-4">
-          <img  src="/src/assets/images/Pok-dex-3-4-2025 1.svg" className='w-50' />
+      <nav className='flex w-full h-20 justify-between items-center px-25 gap-3 anime'>
+         <div className="text-4xl font-bold text-black text-center ">
+          <img  src="/src/assets/images/Pok-dex-3-4-2025 1.svg" className='w-50 ash' />
          </div>
       <SearchBar onSearch={handleSearch} />
-      <img  src="/src/assets/images/pokeball 1.svg" alt=""  className='w-10'/>
       </nav>
      
-      <main className='flex w-full h-full bg-blue-500'>
+      <main className='flex w-full h-full bg-yellow-200 '>
          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 w-full">
         {filteredPokemons.map((pokemon, index) => (
           <PokemonCard key={index} pokemon={pokemon} onClick={() => handlePokemonClick(pokemon.url)} />
         ))}
       </div>
-      <div>{selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}</div>
+      {/* <div>{selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}</div> */}
       </main>
      
      
