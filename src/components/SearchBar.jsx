@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="  flex flex-row gap-4 items-center justify-end w-full ">
+    <div className="  flex flex-row gap-4 items-center justify-end w-full z-100 ">
       <input
         type="text"
         placeholder="Search Pokemon "
