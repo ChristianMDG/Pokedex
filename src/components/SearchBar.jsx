@@ -29,20 +29,20 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center justify-end w-full ">
+    <div className="  flex flex-row gap-4 items-center justify-end w-full ">
       <input
         type="text"
         placeholder="Search Pokemon "
-        className="p-2 rounded text-black w-[50%] bg-amber-50"
+        className="p-2 rounded text-black md:w-[50%] bg-amber-100 outline-none "
         value={search}
         onChange={handleSearch}
       />
       <select
         value={typeFilter}
         onChange={handleTypeChange}
-        className="p-2 rounded text-black w-48"
+        className="p-2 rounded text-black w-48 bg-amber-100 hidden md:block"
       >
-        <option value="">Tous les types</option>
+        <option value="">All</option>
         {types.map((type, index) => (
           <option key={index} value={type}>
             {type.charAt(0).toUpperCase() + type.slice(1)}
