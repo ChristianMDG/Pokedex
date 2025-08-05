@@ -29,11 +29,11 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-4 bg-amber-300">
+    <div className="flex flex-col md:flex-row gap-4 items-center justify-end w-full ">
       <input
         type="text"
-        placeholder="Rechercher par nom ou numéro"
-        className="p-2 rounded text-black w-64"
+        placeholder="Search Pokemon "
+        className="p-2 rounded text-black w-[50%] bg-amber-50"
         value={search}
         onChange={handleSearch}
       />
