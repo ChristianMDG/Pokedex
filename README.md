@@ -1,95 +1,80 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+````markdown
+# Pokédex React + Vite + TailwindCSS
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
--[poke Api](https://pokeapi.co/api/v2/pokemon?limit=8)
-
-
-Voici une **palette de couleurs complète et moderne** pour votre projet **Pokédex** en React + Tailwind, incluant les couleurs pour :
-
-1. 🔥 **Types de Pokémon**
-2. 🧱 **Fond, composants, cartes, boutons**
-3. 🎨 **Texte et icônes**
-4. 🌈 **États interactifs (hover, active, etc.)**
-5. 🪄 **Dégradé facultatif**
+Ce projet est un Pokédex développé avec React, Vite et TailwindCSS, utilisant l'API officielle [PokeAPI](https://pokeapi.co/api/v2/pokemon) pour afficher les informations des Pokémon.
 
 ---
 
-## 1. 🟩 Couleurs par type de Pokémon (badges)
+## Fonctionnalités principales
 
-Ces couleurs peuvent être utilisées comme `bg-...` et `text-...` :
-
-| Type     | Couleur suggérée | Tailwind équivalent                   |
-| -------- | ---------------- | ------------------------------------- |
-| Grass    | `#8BBE8A`        | `bg-green-300` / `text-green-800`     |
-| Poison   | `#A552CC`        | `bg-purple-300` / `text-purple-900`   |
-| Fire     | `#FFA756`        | `bg-orange-300` / `text-orange-800`   |
-| Water    | `#58ABF6`        | `bg-blue-300` / `text-blue-800`       |
-| Bug      | `#8BD674`        | `bg-lime-300` / `text-lime-900`       |
-| Flying   | `#748FC9`        | `bg-indigo-300` / `text-indigo-800`   |
-| Ice      | `#91D8DF`        | `bg-cyan-200` / `text-cyan-900`       |
-| Psychic  | `#FF6568`        | `bg-pink-300` / `text-pink-800`       |
-| Electric | `#F2CB55`        | `bg-yellow-300` / `text-yellow-900`   |
-| Ground   | `#F78551`        | `bg-amber-300` / `text-amber-800`     |
-| Rock     | `#D4C294`        | `bg-yellow-200` / `text-yellow-900`   |
-| Normal   | `#B5B9C4`        | `bg-gray-300` / `text-gray-700`       |
-| Dark     | `#6F6E78`        | `bg-neutral-500` / `text-neutral-100` |
-| Fairy    | `#EBA8C3`        | `bg-pink-200` / `text-pink-900`       |
-| Dragon   | `#7383B9`        | `bg-indigo-400` / `text-indigo-900`   |
-| Steel    | `#417D9A`        | `bg-sky-600` / `text-white`           |
-| Ghost    | `#8571BE`        | `bg-violet-400` / `text-violet-900`   |
-| Fighting | `#EB4971`        | `bg-rose-400` / `text-rose-900`       |
+- Liste des Pokémon avec images, types et informations.
+- Affichage des détails de chaque Pokémon, incluant faiblesses, évolutions, descriptions, etc.
+- Interface moderne et responsive avec TailwindCSS.
+- Effets interactifs et animations.
+- Déploiement simple via GitHub Pages.
 
 ---
 
-## 2. 🧱 Fond et composants
+## Installation et lancement
 
-| Élément               | Couleur   | Tailwind class           |
-| --------------------- | --------- | ------------------------ |
-| Fond principal        | `#F5F7FA` | `bg-gray-100`            |
-| Cartes Pokémon        | `#FFFFFF` | `bg-white` + `shadow-lg` |
-| Header / Navbar       | `#FFFFFF` | `bg-white shadow-md`     |
-| Recherche / Filtres   | `#E5E7EB` | `bg-gray-200`            |
-| Bordure cartes        | `#E0E0E0` | `border-gray-200`        |
-| Évolutions fond hover | `#F3F4F6` | `hover:bg-gray-200`      |
+1. **Cloner le dépôt**
 
----
+```bash
+git clone https://github.com/ChristianMDG/Pokedex.git
+cd Pokedex
+````
 
-## 3. 🎨 Texte et typographie
+2. **Installer les dépendances**
 
-| Élément          | Couleur   | Tailwind class  |
-| ---------------- | --------- | --------------- |
-| Titre principal  | `#111827` | `text-gray-900` |
-| Sous-titres      | `#374151` | `text-gray-700` |
-| Texte secondaire | `#6B7280` | `text-gray-500` |
-| ID Pokémon       | `#9CA3AF` | `text-gray-400` |
+```bash
+npm install
+```
 
----
+3. **Lancer le serveur de développement**
 
-## 4. 🌟 États interactifs
-
-| État         | Couleur                                                 | Tailwind class |
-| ------------ | ------------------------------------------------------- | -------------- |
-| Hover carte  | `scale-105`, `shadow-xl`, `transition-all`              |                |
-| Badge hover  | `brightness-110` / `opacity-90`                         |                |
-| Bouton actif | `ring-2 ring-offset-2 ring-indigo-400`                  |                |
-| Champ focus  | `focus:outline-none focus:ring-2 focus:ring-indigo-400` |                |
+```bash
+npm run dev
+```
 
 ---
 
-## 5. 🌈 Dégradés facultatifs
+## Construction et déploiement
 
-| Élément      | Dégradé                             | Tailwind suggestion                                  |
-| ------------ | ----------------------------------- | ---------------------------------------------------- |
-| Fond du site | `from-red-100 via-pink-50 to-white` | `bg-gradient-to-b from-red-100 via-pink-50 to-white` |
-| Détails      | `from-green-100 to-green-50`        | `bg-gradient-to-r`                                   |
+1. **Construire le projet**
+
+```bash
+npm run build
+```
+
+2. **Déployer sur GitHub Pages**
+
+```bash
+npm run deploy
+```
+
+> Assurez-vous que la configuration `homepage` dans le `package.json` et la propriété `base` dans `vite.config.js` soient correctement définies, par exemple `/Pokedex/` si vous déployez sur `https://ChristianMDG.github.io/Pokedex/`.
+
+---
+
+## Technologies utilisées
+
+* **React** — bibliothèque JavaScript pour construire l'interface utilisateur.
+* **Vite** — outil de build rapide pour projets frontend.
+* **TailwindCSS** — framework CSS utilitaire pour un design rapide et responsive.
+* **Axios** — pour les requêtes HTTP vers l’API PokeAPI.
+* **PokeAPI** — API gratuite pour récupérer les données Pokémon.
+
+---
+
+## Ressources utiles
+
+* Documentation officielle Vite : [https://vitejs.dev/](https://vitejs.dev/)
+* Documentation React : [https://reactjs.org/](https://reactjs.org/)
+* Documentation TailwindCSS : [https://tailwindcss.com/](https://tailwindcss.com/)
+* Documentation PokeAPI : [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
+
+---
+
+Merci d'utiliser ce Pokédex ! N'hésitez pas à contribuer ou à poser des questions.
 
