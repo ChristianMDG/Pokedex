@@ -42,7 +42,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
             className="w-48 h-48 z-10 anime"
           />
 
-          <div className="w-full h-25 mt-5 flex flex-col justify-center items-center">
+          <div className="w-full h-25 mt-15 flex flex-col justify-center items-center">
             <h3 className="text-lg font-bold capitalize text-black mt-1 z-10">
               {pokemon.name}
             </h3>
