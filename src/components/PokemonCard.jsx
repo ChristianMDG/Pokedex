@@ -1,37 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const PokemonCard = ({ pokemon, onClick }) => {
-  const id = pokemon.url.split("/").filter(Boolean).pop();
+  const [types, setTypes] = useState([]);
+  const [id, setId] = useState(null);
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      try {
+        const res = await axios.get(pokemon.url);
+        setTypes(res.data.types);
+        setId(res.data.id);
+      } catch (err) {
+        console.error("Erreur lors du chargement des détails :", err);
+      }
+    };
+    fetchDetails();
+  }, [pokemon.url]);
+
+  if (!id) return null; 
 
   return (
     <div
-      className=" h-90 perspective cursor-pointer"
+      className="h-90 perspective cursor-pointer"
       onClick={() => onClick(id)}
     >
       <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
-        <div className="absolute w-full h-full backface-hidden bg-white border border-gray-200  rounded-2xl shadow-lg flex flex-col justify-center items-center p-4 anime carte">
-          <div className="absolute inset-0 opacity-15 ">
+       
+        <div className="absolute w-full h-full backface-hidden bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center p-4 anime carte">
+          <div className="absolute inset-0 opacity-15">
             <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+              src="/src/assets/images/pokeballHd.png"
               alt="pokeball"
               className="w-full h-full object-contain"
             />
           </div>
+
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`}
             alt={pokemon.name}
             className="w-48 h-48 z-10 anime"
           />
-          <div className="w-full h-25  mt-5 flex flex-col justify-center items-center">
+
+          <div className="w-full h-25 mt-5 flex flex-col justify-center items-center">
             <h3 className="text-lg font-bold capitalize text-black mt-1 z-10">
               {pokemon.name}
             </h3>
-            <div className=" w-full h-[50%]">
-              
+
+            <div className="flex gap-2 mt-2 z-10 flex-wrap justify-center">
+              {types.map((typeInfo, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 rounded-full text-white text-xs font-semibold"
+                  style={{
+                    backgroundColor: getTypeColor(typeInfo.type.name),
+                  }}
+                >
+                  {typeInfo.type.name}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
+    
         <div className="absolute w-full h-full backface-hidden bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl rotate-y-180 flex items-center justify-center text-white font-bold text-xl">
           <div className="flex flex-col justify-center items-center">
             <img src="/src/assets/images/logo (2) 1.png" alt="pokemon" />
@@ -47,64 +79,29 @@ const PokemonCard = ({ pokemon, onClick }) => {
   );
 };
 
+const getTypeColor = (type) => {
+  const colors = {
+    normal: "#A8A77A",
+    fire: "#EE8130",
+    water: "#6390F0",
+    electric: "#F7D02C",
+    grass: "#7AC74C",
+    ice: "#96D9D6",
+    fighting: "#C22E28",
+    poison: "#A33EA1",
+    ground: "#E2BF65",
+    flying: "#A98FF3",
+    psychic: "#F95587",
+    bug: "#A6B91A",
+    rock: "#B6A136",
+    ghost: "#735797",
+    dragon: "#6F35FC",
+    dark: "#705746",
+    steel: "#B7B7CE",
+    fairy: "#D685AD",
+  };
+
+  return colors[type] || "#777";
+};
+
 export default PokemonCard;
-
-// import React from 'react';
-
-// const PokemonCard = ({ pokemon, onClick }) => {
-//   const id = pokemon.url.split('/').filter(Boolean).pop();
-
-//   const types = pokemon.types || [];
-
-//   return (
-//     <div
-//       className="w-80 h-96 perspective cursor-pointer"
-//       onClick={() => onClick(id)}
-//     >
-//       <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
-
-//         <div className="absolute w-full h-full backface-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-2xl shadow-lg flex flex-col justify-center items-center p-4">
-
-//           <div className="absolute inset-0 opacity-15 pointer-events-none">
-//             <img
-//               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
-//               alt="pokeball"
-//               className="w-full h-full object-contain"
-//             />
-//           </div>
-
-//           <img
-//             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`}
-//             alt={pokemon.name}
-//             className="w-48 h-48 z-10 drop-shadow-md"
-//           />
-
-//           <p className="text-sm font-semibold text-gray-500 dark:text-gray-300 mt-2 z-10">
-//             {`#${id.padStart(3, '0')}`}
-//           </p>
-
-//           <h3 className="text-lg font-bold capitalize text-gray-800 dark:text-white mt-1 z-10">
-//             {pokemon.name}
-//           </h3>
-
-//           <div className="flex flex-wrap justify-center gap-2 mt-2 z-10 bg-amber-300">
-//             {types.map((t, i) => (
-//               <span
-//                 key={i}
-//                 className={`px-2 py-1 text-xs rounded-full font-medium text-white
-//                   ${getTypeColorClass(t.type?.name || t.name)}`}
-//               >
-//                 {t.type?.name || t.name}
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-red-500 to-yellow-400 dark:from-purple-800 dark:to-indigo-900 rounded-2xl flex items-center justify-center text-white font-bold text-xl p-4">
-//           <img src="/src/assets/images/pokeball 1.svg" alt="pokeball" className="w-24 h-24 opacity-70" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-// export default PokemonCard;

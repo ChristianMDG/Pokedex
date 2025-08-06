@@ -169,7 +169,7 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
- main,nav,.tertiary,.carte{
+ main,nav,.tertiary,.carte,h3{
   transition: 1s ease-out;
  }
 
@@ -201,7 +201,7 @@
 }
 
 .style{
-     animation: anim 1s ease-in-out ;
+     animation: anim .5s ease-in-out ;
 }
 @keyframes anim {
   0% {

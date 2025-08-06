@@ -60,7 +60,7 @@ const IntroAnimation = () => {
               alt="pokedex"
               className="ash"
             />
-            {/* </div> */}
+           
           </div>
           <div className="w-full h-[20%] flex flex-col justify-center items-center ">
             <button
