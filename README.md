@@ -78,3 +78,4 @@ npm run deploy
 
 Merci d'utiliser ce Pokédex ! N'hésitez pas à contribuer ou à poser des questions.
 
+```
