@@ -15,7 +15,7 @@ const IntroAnimation = () => {
     }, 2000);
   };
   return (
-    <div className="w-screen h-screen flex md:flex-row flex-col items-center justify-center z-50  mt-4 md:mt-0  ">
+    <div className="w-screen h-screen flex md:flex-row flex-col items-center justify-center z-50  mt-4 md:mt-0">
       <div className="md:w-[50%] w-full md:h-full h-screen flex  flex-col items-center justify-center md:p-5">
         <div className="w-full h-[15%]  flex justify-end  md:pr-7 anime">
           <img

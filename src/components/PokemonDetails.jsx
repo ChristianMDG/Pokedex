@@ -35,7 +35,7 @@ const PokemonDetails = ({ pokemon }) => {
   const getIdFromUrl = (url) => url.split('/').filter(Boolean).pop();
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-xl text-black max-w-lg mx-auto">
+    <div className="p-6 rounded-2xl shadow-2xl text-black max-w-lg mx-auto">
      
       <h2 className="text-2xl font-bold capitalize text-center mb-2">{pokemon.name}</h2>
 

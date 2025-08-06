@@ -169,3 +169,49 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+ main,nav,.tertiary,.carte{
+  transition: 1s ease-out;
+ }
+
+.dark{
+ main{
+  background-color: #182032;
+ 
+ }
+ nav{
+   background-color: #374151;
+ }
+ .tertiary{
+  background-color: #e5e7eb;
+  
+ }
+ .carte{
+  background-color: #374151;
+  border: none;
+  
+ }
+  main,nav,.tertiary,.carte{
+  transition: 1s ease-out;
+ }
+ h3{
+  color: white;
+ }
+ 
+ 
+}
+
+.style{
+     animation: anim 1s ease-in-out ;
+}
+@keyframes anim {
+  0% {
+   
+    transform: scale(0);
+    opacity: 0;
+  }
+ 
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
