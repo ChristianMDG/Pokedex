@@ -66,9 +66,9 @@ const PokemonCard = ({ pokemon, onClick }) => {
     
         <div className="absolute w-full h-full backface-hidden bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl rotate-y-180 flex items-center justify-center text-white font-bold text-xl">
           <div className="flex flex-col justify-center items-center">
-            <img src="/src/assets/images/logo (2) 1.png" alt="pokemon" />
+            <img src="./assets/images/logo (2) 1.png" alt="pokemon" />
             <img
-              src="/src/assets/images/pokeball 1.svg"
+              src="./assets/images/pokeball 1.svg"
               alt="pokeball"
               className="w-30"
             />
