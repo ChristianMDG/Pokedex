@@ -19,7 +19,7 @@ const IntroAnimation = () => {
       <div className="md:w-[50%] w-full md:h-full h-screen flex  flex-col items-center justify-center md:p-5">
         <div className="w-full h-[15%]  flex justify-end  md:pr-7 anime">
           <img
-            src="/src/assets/images/Pokemon - 1.png"
+            src="./assets/images/Pokemon - 1.png"
             alt=""
             className="w-50 bird"
           />
@@ -27,7 +27,7 @@ const IntroAnimation = () => {
         <div className="md:w-[70%] w-full md:h-[60%] flex flex-col items-start justify-start  ">
           <div className="h-[20%] w-full  flex justify-center items-end anime ">
             <img
-              src="/src/assets/images/Welcome-to-Pok-dex-3-4-2025 1.png "
+              src="./assets/images/Welcome-to-Pok-dex-3-4-2025 1.png "
               alt=""
               className=""
             />
@@ -35,7 +35,7 @@ const IntroAnimation = () => {
           <div className="h-[60%] w-full flex justify-center items-center">
             <div className="w-70 h-70 bg-yellow-200 rounded-full flex justify-center items-center anime">
               <img
-                src="/src/assets/images/ash.png"
+                src="./assets/images/ash.png"
                 alt="ash"
                 className="ash w-40"
               />
@@ -43,7 +43,7 @@ const IntroAnimation = () => {
           </div>
           <div className="h-[20%] w-full  flex justify-center items- anime ">
             <img
-              src="/src/assets/images/Encyclopedia-of-Pok-mon-3-4-2025 1.png"
+              src="./assets/images/Encyclopedia-of-Pok-mon-3-4-2025 1.png"
               alt=""
               className=""
             />
@@ -56,7 +56,7 @@ const IntroAnimation = () => {
           <div className="w-full h-[80%] p-5 py-7 flex justify-center items-center">
             {/* <div className="w-70 h-70 rounded-full bg-yellow-50 flex justify-center items-center"> */}
             <img
-              src="/src/assets/images/Pok-dex-3-4-2025 1.svg"
+              src="./assets/images/Pok-dex-3-4-2025 1.svg"
               alt="pokedex"
               className="ash"
             />
@@ -78,7 +78,7 @@ const IntroAnimation = () => {
             >
               {isLoading ? (
                 <img
-                  src="/src/assets/images/pokeball 1.svg"
+                  src="./assets/images/pokeball 1.svg"
                   alt=""
                   className="pokeball-loader mx-6"
                 />

@@ -65,7 +65,7 @@ const navigate = useNavigate();
       <nav className="flex flex-row w-full h-20 md:justify-between items-center md:px-25 px-5 md:gap-3 gap-2 anime z-100 fixed bg-white">
         <div className="bg-amber-30 z-100">
           <img
-            src="/src/assets/images/Pok-dex-3-4-2025 1.svg"
+            src="./assets/images/Pok-dex-3-4-2025 1.svg"
             className="md:w-60 w-50 ash "
             onClick={back}
           />
