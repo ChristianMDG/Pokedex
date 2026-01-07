@@ -1,6 +1,4 @@
-Bien sûr ! Voici une version **corrigée, clarifiée et un peu plus professionnelle** de ta documentation Markdown, tout en restant simple et authentique :
 
-````markdown
 # Pokédex React + Vite + TailwindCSS
 
 Ce projet est un Pokédex développé avec **React**, **Vite** et **TailwindCSS**, utilisant l'API officielle [PokeAPI](https://pokeapi.co/api/v2/pokemon) pour afficher les informations des Pokémon.
@@ -83,7 +81,7 @@ npm run deploy
 
 Merci d'utiliser ce Pokédex ! N'hésitez pas à contribuer ou à poser vos questions.
 
-```
+
 
 ✅ **Améliorations apportées :**  
 - Correction de fautes mineures et de syntaxe.  
@@ -92,7 +90,4 @@ Merci d'utiliser ce Pokédex ! N'hésitez pas à contribuer ou à poser vos ques
 - Mise en avant de GitHub Pages et Vercel.  
 - Utilisation cohérente des puces et des formats (gras, liens).  
 
-Si tu veux, je peux aussi te **faire une version plus courte et très percutante**, idéale pour un README GitHub qu’on lit en 1 minute.  
 
-Veux‑tu que je fasse ça ?
-```
